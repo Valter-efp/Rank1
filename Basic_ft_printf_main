@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include "ft_printf.h"
+
+int main(void)
+{
+    int ret1, ret2;
+
+    // 1. String
+    ret1 = printf("Printf:   [%s]\n", "Hello, 42!");
+    ret2 = ft_printf("Ft_printf:[%s]\n", "Hello, 42!");
+    printf("Return:   [%d] vs [%d]\n\n", ret1, ret2);
+
+    // 2. Character
+    ret1 = printf("Printf:   [%c]\n", 'A');
+    ret2 = ft_printf("Ft_printf:[%c]\n", 'A');
+    printf("Return:   [%d] vs [%d]\n\n", ret1, ret2);
+
+    // 3. Decimal integer
+    ret1 = printf("Printf:   [%d]\n", 123);
+    ret2 = ft_printf("Ft_printf:[%d]\n", 123);
+    printf("Return:   [%d] vs [%d]\n\n", ret1, ret2);
+
+    // 4. Integer with negative
+    ret1 = printf("Printf:   [%i]\n", -456);
+    ret2 = ft_printf("Ft_printf:[%i]\n", -456);
+    printf("Return:   [%d] vs [%d]\n\n", ret1, ret2);
+
+    // 5. Unsigned integer
+    ret1 = printf("Printf:   [%u]\n", 3000000000U);
+    ret2 = ft_printf("Ft_printf:[%u]\n", 3000000000U);
+    printf("Return:   [%d] vs [%d]\n\n", ret1, ret2);
+
+    // 6. Hexadecimal lowercase
+    ret1 = printf("Printf:   [%x]\n", 3735928559U);
+    ret2 = ft_printf("Ft_printf:[%x]\n", 3735928559U);
+    printf("Return:   [%d] vs [%d]\n\n", ret1, ret2);
+
+    // 7. Hexadecimal uppercase
+    ret1 = printf("Printf:   [%X]\n", 3735928559U);
+    ret2 = ft_printf("Ft_printf:[%X]\n", 3735928559U);
+    printf("Return:   [%d] vs [%d]\n\n", ret1, ret2);
+
+    // 8. Pointer
+    void *ptr = &ret1;
+    ret1 = printf("Printf:   [%p]\n", ptr);
+    ret2 = ft_printf("Ft_printf:[%p]\n", ptr);
+    printf("Return:   [%d] vs [%d]\n\n", ret1, ret2);
+
+    // 9. Percent sign
+    ret1 = printf("Printf:   [%%]\n");
+    ret2 = ft_printf("Ft_printf:[%%]\n");
+    printf("Return:   [%d] vs [%d]\n\n", ret1, ret2);
+
+    return 0;
+}
